@@ -4,8 +4,10 @@
 
 ```
 1. repository를 fork 후, clone합니다. (초기 1회만) 
-  새로운 주차 폴더가 생겼을 경우 clone이 아닌 pull 또는 fetch을 진행합니다.
-
+2. fork한 repository 최신화 방법
+ 2-1. git remote add upstream https://github.com/Teecher-3rd-gen-study/Algorithm-study.git (초기 1회만)
+ 2-2. git remote -v (확인 용도)
+ 
 2. fork한 저장소의 각 주차에 해당되는 과제 폴더에 소스 코드를 commit 후 push 합니다. 
   파일명은 문제번호_이름으로 합니다. ex) 정길연_12311.py
 
