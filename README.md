@@ -10,7 +10,7 @@
  2-2. git remote -v ( 연결 확인 용도 )
  
  2-3. git fetch upstream ( 원본과 동기화 작업 )
- 2-4. gir merge upstream/main ( 본인 레포에 적용 )
+ 2-4. git merge upstream/main ( 본인 레포에 적용 )
  
 3. fork한 저장소의 각 주차에 해당되는 과제 폴더에 소스 코드를 commit 후 push 합니다. 
   3-1. 파일명은 문제번호_이름으로 합니다. ex) 정길연_12311.py
