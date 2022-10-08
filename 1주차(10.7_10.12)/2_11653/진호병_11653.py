@@ -11,3 +11,5 @@ def fun(x):
 n = int(input())
 
 fun(n)
+
+
