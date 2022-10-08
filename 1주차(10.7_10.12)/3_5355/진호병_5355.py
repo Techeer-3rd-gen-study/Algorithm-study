@@ -13,3 +13,4 @@ for i in range(n):
         if arr[j] == "#":
             num -= 7.00
     print('%.2f' %num)
+    
