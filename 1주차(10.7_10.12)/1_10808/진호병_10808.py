@@ -6,3 +6,4 @@ for i in n :
 
 for j in range(len(alphabet)):
     print(alphabet[j], end=" ")
+    
