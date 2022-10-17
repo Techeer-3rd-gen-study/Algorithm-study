@@ -11,3 +11,5 @@ for i in range(0, num):
   for i in range(0, len(s)):
     print(s[i]*r, end="")
   print()
+
+
