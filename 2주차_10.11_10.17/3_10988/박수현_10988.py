@@ -9,3 +9,5 @@ for i in range(0, len(str)):
     b = 1
 
 print(b)
+
+
