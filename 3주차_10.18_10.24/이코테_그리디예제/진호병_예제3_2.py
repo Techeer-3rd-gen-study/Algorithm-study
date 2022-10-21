@@ -1,22 +1,28 @@
-n,m = map(int ,input().split())
+n, m, k =  map(int,input().split())
 
-arr = [[0] * (m) for _ in range(n)] # arr 만들어 0으로 초기화 시킴 ex. 2 * 4
+arr = list(map(int,input().split()))
 
-minArr = []
-
-for i in range(n): # 만든 arr 틀에 값을 집어넣는 for 문
-    lineArr = list(map(int, input().split()))
-    for j in range(m):
-        arr[i][j] = lineArr[j]
-
-for i in range(n):
-    min = 10000000 # 행 별로 최소값을 주기 위해 행이 바뀔때마다 1000000으로 초기화 시켜줌 
-    for j in range(m):
-        if min > arr[i][j]:
-            min = arr[i][j]
-
-    minArr.append(min) # 각 행의 최소 값들의 배열을 따로 만들어
-
-print(max(minArr)) # 그 배열의 가장 큰 값을 출력함
+arr.sort(reverse=True)
 
 
+firstMax = arr[0]
+secondMax = arr[1]
+
+sum = 0 
+
+while True:
+    for i in range(k):
+        if m == 0 :
+            break
+        m -= 1
+        sum += firstMax
+
+    if m == 0 :
+        break
+    sum += secondMax
+    m -= 1
+    
+
+
+
+print(sum)
