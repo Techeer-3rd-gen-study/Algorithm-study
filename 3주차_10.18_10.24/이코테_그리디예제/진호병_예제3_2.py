@@ -15,8 +15,8 @@ for i in range(n):
         if min > arr[i][j]:
             min = arr[i][j]
 
-    minArr.append(min)
+    minArr.append(min) # 각 행의 최소 값들의 배열을 따로 만들어
 
-print(max(minArr))
+print(max(minArr)) # 그 배열의 가장 큰 값을 출력함
 
 
