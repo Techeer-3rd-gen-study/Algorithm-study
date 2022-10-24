@@ -2,7 +2,7 @@
 
 import sys
 
-n, m = map(int, sys.stdin.readline().split())
+n, k = map(int, sys.stdin.readline().split())
 money = []
 count = 0
 
@@ -16,11 +16,11 @@ money.sort(reverse=True)
 
 for i in money:
     # 동전 개수 계산
-    count = count + m // i
+    count = count + k // i
     # 남은 거스름돈
-    m = m % i
+    k = k % i
     # 더 이상 거스를 돈이 없을 경우 중지
-    if m == 0:
+    if k == 0:
         break
 
 print(count)
