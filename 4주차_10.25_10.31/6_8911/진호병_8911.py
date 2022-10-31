@@ -1,12 +1,15 @@
 n = int(input())
 
+
+
 for i in range(n):
     testcase = list(input())
-    direction = 1 # 홀수 방향 == y축 이동
+    direction = 1  # 방향 정의 1 = 위쪽, 2 = 오른쪽 , 3 = 아래쪽, 4 = 왼쪽
     x = 0
     y = 0
-    xArr = [0]
-    yArr = [0]
+    # 이동경로 배열로 저장해 최소값 최대값 찾아서 넓이 구하기 위함
+    xArr = [0]  
+    yArr = [0] 
     for j in testcase:
         if j == "L":
             direction -= 1
@@ -43,10 +46,5 @@ for i in range(n):
             elif j == "B" and direction == 4: 
                 x += 1
                 xArr.append(x)
-    # print(max(xArr))
-    # print(min(xArr))
-
-    # print(max(yArr))
-    # print(min(yArr))
 
     print((max(xArr) - min(xArr)) * (max(yArr) - min(yArr)))
