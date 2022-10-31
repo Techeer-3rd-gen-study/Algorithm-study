@@ -15,4 +15,5 @@ while bignum != 0 :
 print(gcd)
 
 lcm = a * b // gcd
+
 print(lcm)
