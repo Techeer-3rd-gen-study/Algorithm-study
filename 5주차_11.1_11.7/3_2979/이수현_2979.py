@@ -1,7 +1,7 @@
 # 트럭주차
 
 import sys
-
+input = sys.stdin.readline
 a, b, c = map(int, input().rstrip().split())
 # 주차 시간 체크할 변수
 time_table = [0] * 100
