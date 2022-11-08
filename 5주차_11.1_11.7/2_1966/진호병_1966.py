@@ -8,7 +8,7 @@ for _ in range(total):
     cnt = 0 
     while True: # 궁금한 문서가 pop 될때까지 무한 반복 
         if importance[0] == max(importance) : # 큰거부터 꺼내야하니 가장 큰 수면 pop해서 순서 +1을 함 
-            test = importance.pop(0)
+            importance.pop(0)
             result = idx.pop(0)
             cnt += 1
             if result == 1 : # 만약에 궁금했던 숫자면 몇번째로 출력됐는지 출력하고 break
