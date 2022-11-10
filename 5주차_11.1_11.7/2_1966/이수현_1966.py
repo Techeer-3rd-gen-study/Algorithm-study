@@ -30,3 +30,4 @@ for _ in range(case):
         else:
             q.append(q.popleft())
             idx.append(idx.popleft())
+            

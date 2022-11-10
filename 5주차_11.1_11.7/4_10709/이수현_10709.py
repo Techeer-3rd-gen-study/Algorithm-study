@@ -30,3 +30,4 @@ for i in range(h):
     for j in range(w):
         print(weather_check[i][j], end=' ')
     print()
+    

@@ -60,3 +60,4 @@ for y in range(min_y, max_y + 1):
         else:
             print("X", end="")
     print()
+    
