@@ -22,4 +22,3 @@ for i in time_table:
     elif i == 3:
         money += c * i
 print(money)
-
