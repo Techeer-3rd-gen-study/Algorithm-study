@@ -22,4 +22,5 @@ def dfs(v):
             dfs(i)
 
 dfs(1)
+# 1번 컴퓨터 제외하고 감염된 컴퓨터의 수 출력
 print(sum(visited) - 1)
