@@ -8,16 +8,11 @@ input = sys.stdin.readline
 n = int(input())
 
 graph = [list(input().rstrip()) for _ in range(n)]
-    
-# for i in range(n):
-#     for j in range(n):
-#         print(graph[i][j], end=" ")
-#     print()
-
-house = list()
+house = list()      # 단지 내 집 수를 담는 list
 
 def bfs(a, b, graph):
     house_num = -1
+    
     dx = [1, -1, 0, 0]
     dy = [0, 0, 1, -1]
 
