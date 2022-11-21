@@ -1,47 +1,46 @@
-# dfs : 인접행렬 + 재귀, bfs : 큐
-# 정점번호가 0이아닌, 1부터 시작한다는 점 주의
-
 from collections import deque
 
 n, m, start = map(int, input().split())
 
-graph = [[0] * (n+1) for i in range(n+1)]
-for i in range(m) :
+graph = [[0] * (n+1) for _ in range(n+1)]
+visited = [False] * (n+1) # 방문한 노드
+
+for _ in range(m) :
     x, y = map(int, input().split())
-    graph[x][y] = 1
-    graph[y][x] = 1
+    graph[x][y] = graph[y][x] = 1
 
-visit = [0 for _ in range(n+1)]
-
-
+# dfs는 재귀적
+# 첫 노드를 받으면 visited에 기록하고 연결된거를 계속해 찾아가기
 def dfs(start):
-    print(start, end=' ')
-    visit[start] = 1
+    print(start, end=" ")
+    visited[start] = True  # 들어온 값 방문처리
 
     for i in range(1, n+1):
-        if visit[i] == 0 and graph[x][y] == 1:
+        # if visited[i] == 0 and (graph[start][i] == 1 or graph[i][start] == 1):
+        # 어차피 line10에서 양방향 연결 해줬으니 두번 확인할 필요 없음
+        if visited[i] == False and (graph[start][i] == 1 or graph[i][start] == 1):
             dfs(i)
 
+
+# bfs는 queue
+# 들어온거 주변을 먼저 탐색
 def bfs(start):
     queue = deque()
-    queue = [start]
-    visit[start] = 0
-    
-    while(queue) :
-        start = queue[0]
-        print(start, end=' ')
+    visited[start] = True
+    queue.append(start)
 
-        del queue[0]  # pop이랑 헷갈리지말기
+    # queue가 빌때까지
+    while queue : 
+        now = queue.popleft()
+        print(now, end=" ")
 
         for i in range(1, n+1):
-            if visit[i] == 1 and graph[start][i] == 1:
+            if graph[now][i] == 1 and visited[i] == False:
                 queue.append(i)
-                visit[i] = 0
-
+                visited[i] = True
+    
 dfs(start)
 print()
+visited = [False] * (n+1)
 bfs(start)
-
-        
-
 
