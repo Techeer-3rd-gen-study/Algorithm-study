@@ -31,13 +31,17 @@ drawing_cnt = 0
 for i in range(n):
     for j in range(m):
         if graph[i][j] == 1:
+            flag = 1    
             area_list.append(bfs(i, j, graph))
             drawing_cnt += 1
+        else :
+            flag = 0
 
+max_area = max(area_list)
 if drawing_cnt == 0 :
-    result = 0
-else : 
-    result = max(area_list)
+    max_area = 0
+if drawing_cnt == 1 and flag == 1 and max_area == 0:     # 그림자체는 있지만 area값이 0으로 나올때 강제 1로 변환
+    max_area = 1
     
 print(drawing_cnt)
-print(result)
+print(max_area)
