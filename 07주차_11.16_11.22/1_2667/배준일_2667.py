@@ -1,42 +1,47 @@
+# 단지 번호 
+
+from collections import deque
 import sys
 input = sys.stdin.readline
-from collections import deque
 
-dx = [1, -1, 0, 0, 1, -1, 1, -1] # 상하좌우 대각선까지 체크
-dy = [0, 0, -1, 1, -1, 1, 1, -1] 
+dx = [-1, 1, 0, 0]
+dy = [0, 0, -1, 1]
 
-def bfs(graph, a, b):
+N = int(input().rstrip())
+danji = []
+
+def bfs(graph, a, b): # a, b는 좌표
     queue = deque()
-    queue.append((a, b)) # 튜플()이든 리스트[]든 상관없다.
+    queue.append((a,b)) # queue에 추가
     graph[a][b] = 0 # 추가한 좌표 0으로 초기화
+    house = 1 # (a, b) count -> 1
 
     while queue:
         x, y = queue.popleft()
-
-        for i in range(8): # 상하좌우 대각선 = 8
+        
+        for i in range(4): # 상하좌우 탐색
             nx = x + dx[i]
             ny = y + dy[i]
 
-            if 0 <= nx < h and 0 <= ny < w and graph[nx][ny] == 1: # 좌표밖이 아니고 섬일 때
-                graph[nx][ny] = 0 # 0으로 왔던 곳 체크
-                queue.append((nx, ny)) # 큐에 추가
+            if nx < 0 or nx >=N or ny < 0 or ny >= N: # 좌표 밖 예외처리
+                continue
 
-while True:
-    w, h = map(int, input().rstrip().split()) # 넓이, 높이
-    graph = []
-    island = 0
-    # 0, 0이면 break
-    if w == 0 and h == 0:
-        break
+            if graph[nx][ny] == 1: 
+                graph[nx][ny] = 0
+                queue.append((nx, ny))
+                house += 1
+    return house
 
-    for _ in range(h):
-        graph.append(list(map(int, input().rstrip().split())))
-    
-    for a in range(h):
-        for b in range(w):
-            if graph[a][b] == 1: # 섬일때 탐색시작
-                bfs(graph, a, b)
-                island += 1 # 섬 ++
-    print(island)
-    
+graph = [list(map(int, input().rstrip())) for _ in range(N)] # 지도   
 
+for i in range(N):
+    for j in range(N):
+        if graph[i][j] == 1:
+            danji.append(bfs(graph, i, j))
+
+danji.sort() # 오름차순 정렬
+
+print(len(danji)) # 총 단지 수
+
+for i in danji:
+    print(i) # 단지 내 집의 수
