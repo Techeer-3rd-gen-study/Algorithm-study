@@ -24,12 +24,13 @@ def bfs(a, b, graph):
 
 
 while True:
-    w, h = map(int, input().split())
+    w, h = list(map(int, input().split()))
+    graph = list()
     island_cnt = 0 
+
     if w == h == 0:
         break
     else:
-        graph = list()
         for _ in range(h):
             graph.append(list(map(int, input().split())))
         
@@ -38,18 +39,8 @@ while True:
                 if graph[i][j] == 1:
                     bfs(i, j, graph)
                     island_cnt += 1
-                
+
     island.append(island_cnt)
 
 for i in island:
     print(i)
-
-
-
-
-
-
-    # for i in range(h):
-    #     for j in range(w):
-    #         print(graph[i][j], end= " ")
-    #     print()
