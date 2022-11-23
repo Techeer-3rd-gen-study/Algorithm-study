@@ -17,3 +17,23 @@ for _ in range(int(input())):
     else:
         print(0)
    # print(visited[N] if visited[N] > 0 else 0)
+
+# circle = int(input())
+
+
+
+# for _ in range(circle):
+#     N = int(input())
+#     graph = [0 for _ in range(N+1)]
+#     for i in range(1,N+1):
+#         graph[i] = int(input())
+#     start = graph[1]
+#     count = 1
+#     while (start != N and count <= N):
+#         start = graph[start]
+#         count += 1 
+#     if(count > N) :
+#         count =0
+#     print(count)
+
+
