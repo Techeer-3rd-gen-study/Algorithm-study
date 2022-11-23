@@ -9,7 +9,7 @@ dy = [0, 1] # 아래
 
 N = int(input().rstrip())
 graph = [list(map(int, input().rstrip().split())) for _ in range(N)] # map
-visited = [[False]*3 for _ in range(N)]
+visited = [[False] * N for _ in range(N)]
 
 def bfs(graph, a, b): # a, b는 좌표
     queue = deque()

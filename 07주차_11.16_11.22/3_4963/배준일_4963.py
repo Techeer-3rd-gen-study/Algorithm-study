@@ -1,3 +1,5 @@
+# 섬의 개수
+
 import sys
 input = sys.stdin.readline
 from collections import deque
