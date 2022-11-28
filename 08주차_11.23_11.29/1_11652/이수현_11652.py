@@ -19,4 +19,4 @@ for _ in range(n):
 # 카드 개수는 내림차순, 카드 숫자는 오름차순 정렬
 # (첫 번째 요소, 두 번째 요소), 첫 번째 요소가 우선순위
 result = sorted(card_dic.items(), key = lambda x : (-x[1], x[0]))
-print(result)
+print(result[0][0])
