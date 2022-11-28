@@ -1,6 +1,7 @@
 n = int(input())
 
 card = {}
+# 딕셔너리 : key, value 로 이루어져 있으며 정렬 또한 가능 lambda를 이용해 여러가지 기준 정렬도 가능
 
 for i in range(n):
     node = int(input())
