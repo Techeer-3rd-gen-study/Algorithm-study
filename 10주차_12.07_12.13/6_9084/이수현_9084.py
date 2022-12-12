@@ -17,7 +17,7 @@ for _ in range(t):
 
     for coin in coins:
         for i in range(m + 1):
-            # 만드려는 돈이 가지고 있는 화페단위보다 크거나 같을 경우
+            # 만들려고 하는 돈이 가지고 있는 화페단위보다 크거나 같을 경우
             # 이전 경우의 수에 현재 동전으로 만들 수 있는 경우의 수 더하기
             if i >= coin:
                 d[i] += d[i - coin]
