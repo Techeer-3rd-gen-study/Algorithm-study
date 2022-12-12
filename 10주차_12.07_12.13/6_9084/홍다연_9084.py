@@ -1,5 +1,5 @@
 # 9084번 : 동전 
-# https://d-cron.tistory.com/23 
+# https://d-cron.tistory.com/23 알고리즘 참고한 링크 
 
 import sys
 input = sys.stdin.readline
