@@ -1,4 +1,4 @@
-# 112727 : 2xn 타일링 2
+# 11727 : 2xn 타일링 2
 
 import sys
 input = sys.stdin.readline
