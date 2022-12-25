@@ -1,5 +1,7 @@
 # 11404 : 플로이드
 
+import sys
+input = sys.stdin.readline
 INF = int(1e9)
 
 n = int(input())
@@ -16,7 +18,7 @@ for a in range(1, n + 1):
 # 각 간선에 대한 정보를 입력받아, 그 값으로 초기화
 for _ in range(m):
     # a에서 b로 가는 비용은 c로 설정
-    a, b, c = map(int, input().split())
+    a, b, c = map(int, input().rstrip().split())
     if graph[a][b] > c:
         graph[a][b] = c
 
