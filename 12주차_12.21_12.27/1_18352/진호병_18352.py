@@ -35,3 +35,7 @@ for i in range(1, n+1):
 
 if flag:
     print(-1)
+
+
+
+# bfs 로 푸는 방법은 생각했는데 다익스트라로 못풂
