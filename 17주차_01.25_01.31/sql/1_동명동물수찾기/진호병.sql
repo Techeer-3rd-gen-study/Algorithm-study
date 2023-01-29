@@ -1,0 +1,5 @@
+-- 코드를 입력하세요
+SELECT NAME, COUNT(name) AS "COUNT" from ANIMAL_INS
+GROUP BY NAME 
+HAVING COUNT(name) >= 2
+ORDER BY NAME
