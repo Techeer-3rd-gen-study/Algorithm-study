@@ -1,3 +1,5 @@
+# H-Index
+
 def solution(citations):
     n = len(citations) # 발표한 논문
     citations.sort() # 오름차순 정렬
